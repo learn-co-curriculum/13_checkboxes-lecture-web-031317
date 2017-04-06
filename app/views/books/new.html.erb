@@ -1,10 +1,20 @@
 <h1>Create a New Book</h1>
 
+I want to have one checkbox for each genre in my DB.
+
+Each checkbox input needs to have a name.
+
+Each one needs to have like some type of value.
 
 <form method="post" action="/books" >
   <label>Title</label>
   <input type="text" name="book[title]"/>
   <label>Snippet</label>
   <input type="text" name="book[snippet]" />
+
+  <% @genres.each do |genre| %>
+    <label for="book[genre]"><%= genre.name %></label>
+    <input type="checkbox" name="book[genre_ids][]" value="<%= genre.id %>"/>
+  <% end %>
   <input type="submit" />
 </form>
