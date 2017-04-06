@@ -1,0 +1,10 @@
+<h1>Edit a Book</h1>
+
+<form method="post" action="/books/<%= @book.id %>" >
+  <input type="hidden" name="_method" value="PATCH" />
+  <label>Title</label>
+  <input type="text" name="book[title]" value="<%= @book.title %>"/>
+  <label>Snippet</label>
+  <input type="text" name="book[snippet]" value="<%= @book.snippet %>"/>
+  <input type="submit" />
+</form>
